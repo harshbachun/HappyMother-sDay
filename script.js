@@ -1,8 +1,26 @@
 const envelope = document.getElementById("envelope");
 const seal = document.querySelector(".wax-seal");
+const overlay = document.getElementById("letterOverlay");
+const backdrop = document.getElementById("letterBackdrop");
+const closeBtn = document.getElementById("letterClose");
 
-seal.addEventListener("click", () => {
-  envelope.classList.toggle("open");
+function openLetter() {
+  envelope.classList.add("open");
+  overlay.classList.add("visible");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLetter() {
+  overlay.classList.remove("visible");
+  document.body.style.overflow = "";
+  setTimeout(() => envelope.classList.remove("open"), 400);
+}
+
+seal.addEventListener("click", openLetter);
+backdrop.addEventListener("click", closeLetter);
+closeBtn.addEventListener("click", closeLetter);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLetter();
 });
 
 const revealEls = document.querySelectorAll(
