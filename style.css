@@ -31,7 +31,9 @@ body {
   justify-content: space-between;
   gap: 80px;
 }
-.hero-text { flex: 1; }
+.hero-text {
+  flex: 1;
+}
 .hero-text h1 {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
@@ -73,8 +75,9 @@ body {
   background-color: #c393ab;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
   letter-spacing: 1.5px;
-  font-size: 15px;
-  font-weight: 300;
+  font-family: "Cause", cursive;
+  font-weight: 700;
+  font-size: 18px;
   color: #33041c;
   text-decoration: none;
   transition: all 0.35s ease;
@@ -97,12 +100,20 @@ body {
     text-align: center;
     gap: 40px;
   }
-  .hero-text p { margin-inline: auto; }
-  .hero-image img { max-width: 300px; }
+  .hero-text p {
+    margin-inline: auto;
+  }
+  .hero-image img {
+    max-width: 300px;
+  }
 }
 @media (max-width: 480px) {
-  .hero { padding: 60px 24px; }
-  .hero-content { gap: 28px; }
+  .hero {
+    padding: 60px 24px;
+  }
+  .hero-content {
+    gap: 28px;
+  }
 }
 
 /* LETTER SECTION */
@@ -113,6 +124,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 20px;
+  background: linear-gradient(to bottom, hsl(329, 45%, 87%) 60%, #592e40 100%)
 }
 .letter-section h2 {
   font-family: "Lobster", sans-serif;
@@ -148,7 +160,10 @@ body {
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 10;
-  transition: opacity 0.6s ease, filter 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.6s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 .wax-seal:hover {
   filter: brightness(1.4);
@@ -158,8 +173,12 @@ body {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.7);
 }
-.envelope-container.open .closed-envelope { opacity: 0; }
-.envelope-container.open .open-envelope { opacity: 1; }
+.envelope-container.open .closed-envelope {
+  opacity: 0;
+}
+.envelope-container.open .open-envelope {
+  opacity: 1;
+}
 
 /* LETTER OVERLAY */
 .letter-overlay {
@@ -221,7 +240,9 @@ body {
   line-height: 1;
   padding: 4px 8px;
   border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 .letter-close:hover {
   color: #ff3578;
@@ -236,21 +257,28 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 20px;
+  background: #592e40;
 }
 .photo-section h2 {
   font-family: "Lobster", sans-serif;
   font-size: clamp(2rem, 6vw, 5rem);
-  color: #33041c;
+  color: #dd84a9;
   margin-bottom: 50px;
   text-align: center;
   padding: 0 16px;
 }
+
+.photo-section h2 .highlight {
+  color: #ffd0e4;
+  font-style: italic;
+}
+
 .photo-section p {
   font-family: "JetBrains Mono", monospace;
   font-weight: 500;
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
-  color: #6e2e4f;
+  color: #bfa8b2;
   margin-top: 40px;
   max-width: 500px;
   text-align: center;
@@ -291,7 +319,9 @@ body {
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-.hero-image { transition-delay: 0.3s; }
+.hero-image {
+  transition-delay: 0.3s;
+}
 .in-view {
   opacity: 1 !important;
   transform: translateY(0) !important;

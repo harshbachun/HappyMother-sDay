@@ -6,8 +6,16 @@ const closeBtn = document.getElementById("letterClose");
 
 function openLetter() {
   envelope.classList.add("open");
-  overlay.classList.add("visible");
-  document.body.style.overflow = "hidden";
+  envelope.scrollIntoView({ behavior: "smooth", block: "center" });
+  const openImg = envelope.querySelector(".open-envelope");
+  openImg.addEventListener(
+    "transitionend",
+    () => {
+      overlay.classList.add("visible");
+      document.body.style.overflow = "hidden";
+    },
+    { once: true },
+  );
 }
 
 function closeLetter() {
@@ -24,7 +32,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 const revealEls = document.querySelectorAll(
-  ".hero-text, .hero-image, .letter-section h2, .envelope-container, .photo-section h2, .photo-card"
+  ".hero-text, .hero-image, .letter-section h2, .envelope-container, .photo-section h2, .photo-card",
 );
 
 const observer = new IntersectionObserver(
@@ -39,7 +47,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+  { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
 );
 
 revealEls.forEach((el) => observer.observe(el));
