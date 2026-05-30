@@ -12,11 +12,12 @@ section {
   box-sizing: border-box;
 }
 body {
-  background: hsl(329, 45%, 87%);
+  background: #000000;
 }
 
 /* HERO */
 .hero {
+  background: #edcfde;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -65,7 +66,21 @@ body {
   max-width: 500px;
   border-radius: 24px;
   object-fit: cover;
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 24px 60px rgba(237, 207, 222, 0.5);
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
 }
+
+.hero-image img:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 28px 70px rgba(237, 207, 222, 0.6);
+}
+
 .hero-btn {
   display: inline-block;
   padding: 17px 40px;
@@ -124,8 +139,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 20px;
-  background: linear-gradient(to bottom, hsl(329, 45%, 87%) 60%, #592e40 100%)
+  background: linear-gradient(
+    to bottom,
+    #edcfde 20%,
+    #d4a0bc 48%,
+    #a55878 70%,
+    #7a3d58 85%,
+    #592e40 98%
+  );
 }
+
 .letter-section h2 {
   font-family: "Lobster", sans-serif;
   font-size: clamp(2rem, 6vw, 5rem);
@@ -295,8 +318,21 @@ body {
   width: 100%;
   border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 24px 60px rgba(89, 46, 64, 0.5);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
+
+.photo-card img:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 28px 70px rgba(89, 46, 64, 0.6);
+}
+
 .photo-caption {
   font-size: clamp(1rem, 3.5vw, 1.2rem);
   line-height: 1.8;
